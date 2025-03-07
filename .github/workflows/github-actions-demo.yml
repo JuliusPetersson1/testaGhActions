@@ -9,20 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - uses: actions/checkout@v4
         with:
           repository: "JuliusPetersson1/testaGhActions"
           ref: main
 
-      # Cache npm dependencies
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
+      - uses: actions/cache@v4
+        id: npm-cache
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-modules-
+            ${{ runner.os }}-node-
 
-      # Install npm dependencieskör om igen
       - run: npm install
