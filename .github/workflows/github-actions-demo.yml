@@ -23,3 +23,17 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm install
+
+  example_matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.version }}
+
+      - run: npm install
+      - run: npm test
