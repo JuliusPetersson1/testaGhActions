@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hej från julius"
+      - run: echo "testar - $env:RUNNER_OS."
+      - run: echo "vilket repo - ${{ github.action_repository }}"
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
