@@ -12,7 +12,7 @@ jobs:
         with:
           repository: "JuliusPetersson1/testaGhActions"
           ref: main
-      - run: npm run install
+      - run: npm install
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
