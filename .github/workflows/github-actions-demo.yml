@@ -8,9 +8,11 @@ jobs:
   juliusTestar:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hej från julius"
-      - run: echo "testar - $env:RUNNER_OS."
-      - run: echo "vilket repo - ${{ github.repository }}"
+      - uses: actions/checkout@v4
+        with:
+          repository: "JuliusPetersson1/testaGhActions"
+          ref: main
+      - run: npm run install
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
