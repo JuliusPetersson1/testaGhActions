@@ -1,11 +1,10 @@
-name: GitHub Actions Demo
+name: GitHub Actions Demo test
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on:
-  issue_comment:
-    types: [created, deleted]
-  push:
-    branches: ["main"]
 
+on:
+  push:
+    branches:
+      - "**" # matches every branch
 jobs:
   juliusTestar:
     runs-on: ubuntu-latest
