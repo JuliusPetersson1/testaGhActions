@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [10, 12, 14, 16, 29]
+        version: [10, 12, 14]
 
     steps:
       - uses: actions/setup-node@v4
